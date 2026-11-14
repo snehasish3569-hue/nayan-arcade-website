@@ -1,3 +1,121 @@
-@media(max-width:980px){.premium-hero-grid{grid-template-columns:.9fr 1.1fr;gap:5%}.premium-hero-image>img{height:470px}.premium-facts>div{padding:14px 13px;gap:9px}.premium-location-grid{gap:6%}.premium-section-note{max-width:330px}}
-@media(max-width:760px){.premium-hero{padding-top:40px}.premium-hero-grid{grid-template-columns:1fr;gap:28px;padding-bottom:34px}.premium-hero-copy{padding:0}.premium-hero h1{font-size:clamp(3.1rem,14vw,4.7rem)}.premium-lede{font-size:.9rem}.premium-hero-image{padding-left:12px}.premium-hero-image>img{height:min(105vw,480px)}.premium-facts{grid-template-columns:1fr 1fr;transform:none}.premium-facts>div{padding:13px 12px;border-bottom:1px solid #e8ebe6}.premium-facts>div:nth-child(2){border-right:0}.premium-facts>div:nth-child(3),.premium-facts>div:nth-child(4){border-bottom:0}.premium-facts strong{font-size:.7rem}.premium-facts small{font-size:.57rem}.premium-intro{padding:46px 0}.premium-intro-grid{grid-template-columns:1fr;gap:18px}.premium-intro h2,.premium-enquiry h2{font-size:2.55rem}.premium-plans,.premium-features{padding:68px 0}.premium-plans .section-heading,.premium-features .section-heading{align-items:flex-start;flex-direction:column;gap:14px}.premium-plan-grid{grid-template-columns:1fr}.premium-plan-card{min-height:245px;padding:25px}.premium-plan-card p{min-height:0}.premium-location{padding:68px 0}.premium-location-grid{grid-template-columns:1fr;gap:32px}.premium-location-copy h2{font-size:2.6rem}.premium-distance-card{padding-inline:16px}.distance-card-head{font-size:.52rem}.premium-feature-grid{grid-template-columns:1fr;gap:7px}.premium-feature-grid article{padding:20px 0}.premium-feature-grid article>span{margin-bottom:13px}.premium-enquiry{padding:55px 0}.premium-enquiry-inner{grid-template-columns:1fr;gap:22px;padding:30px 24px}.premium-enquiry-side{padding:5px 0 5px 18px}.premium-footer-grid{grid-template-columns:1fr 1fr;gap:25px}.premium-footer-grid>div:first-child{grid-column:1/-1}.premium-footer-bottom{flex-direction:column;gap:6px}.premium-float-cta{right:12px;bottom:12px;padding:11px 15px}}
-@media(max-width:420px){.premium-hero h1{font-size:3.1rem}.premium-hero .hero-actions{align-items:flex-start;flex-direction:column;gap:17px;margin:25px 0}.premium-facts>div{align-items:flex-start}.fact-icon{width:29px;height:29px}.premium-distance-card>div:not(.distance-card-head){font-size:.66rem}.premium-footer-grid{grid-template-columns:1fr}.premium-footer-grid>div:first-child{grid-column:auto}.illustrative-note{right:4px;max-width:55%;font-size:.52rem}.premium-disclaimer{font-size:.6rem}}
+@media (max-width: 980px) {
+  .premium-hero-grid,
+  .premium-intro-grid,
+  .premium-location-grid,
+  .premium-enquiry-inner,
+  .contact-layout,
+  .section-heading,
+  .info-grid,
+  .premium-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    display: grid;
+  }
+
+  .premium-plan-grid,
+  .premium-feature-grid,
+  .gallery-grid,
+  .spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .premium-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-nav {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: calc(100% + 12px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.98);
+    padding: 18px 20px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .nav-cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .premium-hero {
+    padding-top: 54px;
+  }
+
+  .premium-hero-grid,
+  .premium-plan-grid,
+  .premium-feature-grid,
+  .gallery-grid,
+  .spec-grid,
+  .field-row,
+  .premium-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn,
+  .btn {
+    width: 100%;
+  }
+
+  .premium-hero-image img {
+    height: 420px;
+  }
+
+  .page-hero {
+    padding-top: 52px;
+  }
+
+  .premium-enquiry-inner {
+    padding: 24px 18px;
+  }
+
+  .lead-form {
+    padding: 18px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .nav-wrap {
+    min-height: 76px;
+  }
+
+  .brand-copy small {
+    font-size: 0.68rem;
+  }
+
+  .premium-hero-image figcaption {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}

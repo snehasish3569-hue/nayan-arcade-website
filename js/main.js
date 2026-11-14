@@ -14,7 +14,9 @@ const initNavigation = () => {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   });
+
   nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
   });
@@ -25,12 +27,18 @@ const initForms = () => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const note = form.querySelector('.form-note');
+
       if (!form.checkValidity()) {
         form.reportValidity();
-        if (note) note.textContent = 'Please check the required name and phone fields.';
+        if (note) note.textContent = 'Please complete the required name, phone and consent fields.';
         return;
       }
-      if (note) note.textContent = 'Your details have not been sent. This prototype is not connected to an enquiry service yet.';
+
+      if (note) {
+        note.textContent = 'Your enquiry has been captured in this prototype. Connect the form to your preferred enquiry service to receive live submissions.';
+      }
+
+      form.reset();
     });
   });
 };
@@ -38,5 +46,7 @@ const initForms = () => {
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initForms();
-  document.querySelectorAll('#year').forEach((el) => { el.textContent = new Date().getFullYear(); });
+  document.querySelectorAll('#year').forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
 });
