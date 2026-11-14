@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://snehasish3569-hue.github.io/nayan-arcade-website/sitemap.xml
