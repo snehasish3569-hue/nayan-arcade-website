@@ -22,6 +22,26 @@ const initNavigation = () => {
   });
 };
 
+const revealElements = () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = Number(entry.target.dataset.delay || 0);
+        window.setTimeout(() => entry.target.classList.add('is-visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+};
+
 const initForms = () => {
   document.querySelectorAll('[data-form="lead-form"]').forEach((form) => {
     form.addEventListener('submit', (event) => {
@@ -45,6 +65,7 @@ const initForms = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
+  revealElements();
   initForms();
   document.querySelectorAll('#year').forEach((el) => {
     el.textContent = new Date().getFullYear();

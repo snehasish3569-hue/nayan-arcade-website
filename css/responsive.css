@@ -41,24 +41,13 @@
     box-shadow: var(--shadow);
   }
 
-  .site-nav.is-open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  .nav-cta {
-    width: 100%;
-  }
+  .site-nav.is-open { display: flex; }
+  .nav-toggle { display: inline-block; }
+  .nav-cta { width: 100%; }
 }
 
 @media (max-width: 760px) {
-  .premium-hero {
-    padding-top: 54px;
-  }
-
+  .premium-hero { padding-top: 54px; }
   .premium-hero-grid,
   .premium-plan-grid,
   .premium-feature-grid,
@@ -79,40 +68,17 @@
     width: 100%;
   }
 
-  .premium-hero-image img {
-    height: 420px;
-  }
-
-  .page-hero {
-    padding-top: 52px;
-  }
-
-  .premium-enquiry-inner {
-    padding: 24px 18px;
-  }
-
-  .lead-form {
-    padding: 18px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
+  .premium-hero-image img { height: 420px; }
+  .page-hero { padding-top: 52px; }
+  .premium-enquiry-inner { padding: 24px 18px; }
+  .lead-form { padding: 18px; }
+  .footer-bottom { flex-direction: column; }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 18px;
-  }
-
-  .nav-wrap {
-    min-height: 76px;
-  }
-
-  .brand-copy small {
-    font-size: 0.68rem;
-  }
-
+  .container { padding: 0 18px; }
+  .nav-wrap { min-height: 76px; }
+  .brand-copy small { font-size: 0.68rem; }
   .premium-hero-image figcaption {
     left: 10px;
     right: 10px;
