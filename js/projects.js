@@ -1,278 +1,57 @@
-const projects = [
-  {
-    id: 'sunrise-vista',
-    name: 'Sunrise Vista',
-    location: 'Bhubaneswar, Odisha',
-    type: 'Residential Apartment',
-    config: '2 BHK / 3 BHK',
-    price: 'Premium range',
-    status: 'New Launch',
-    category: 'new-launch',
-    image: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80'
-    ],
-    description: 'A contemporary residential address crafted for families seeking modern city living, practical comfort and neighborhood convenience.',
-    overview: 'Sunrise Vista is designed for homebuyers looking for an elegant, family-oriented lifestyle in Bhubaneswar. The project emphasizes thoughtful planning, natural light, and a strong connection to daily essentials.',
-    specifications: ['Modern apartment planning', 'Well-designed living spaces', 'Secure access and common areas', 'Natural light and ventilation'],
-    amenities: ['Landscaped community spaces', 'Children play area', '24/7 security', 'Power backup', 'Visitor seating', 'Car parking'],
-    locationAdvantages: ['Close to schools and daily essentials', 'Accessible by major city roads', 'Suitable for family living', 'Balanced urban convenience'],
-    connectivity: ['Easy commute across Bhubaneswar', 'Nearby retail and service hubs', 'Accessible residential zone', 'Connected to local transport routes'],
-    btnLabel: 'Schedule a Site Visit'
-  },
-  {
-    id: 'meadow-heights',
-    name: 'Meadow Heights',
-    location: 'Near NH-16, Bhubaneswar',
-    type: 'Family Apartments',
-    config: '1 BHK / 2 BHK / 3 BHK',
-    price: 'Affordable to mid-range',
-    status: 'Upcoming',
-    category: 'upcoming',
-    image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80'
-    ],
-    description: 'A thoughtfully laid-out residential community ideal for growing families and professionals seeking practical home value in Bhubaneswar.',
-    overview: 'Meadow Heights combines streamlined apartment planning and livable spaces that prioritize family needs and comfortable urban lifestyles.',
-    specifications: ['Smart interior planning', 'Flexible apartment sizes', 'Comfortable finishes', 'Efficient circulation planning'],
-    amenities: ['Green open areas', 'Community seating zones', 'Security monitoring', 'Elevators', 'Water management', 'Open parking'],
-    locationAdvantages: ['Near daily conveniences', 'Family-oriented neighborhood', 'Good access to transportation', 'Well-connected residential zone'],
-    connectivity: ['Close to main roads', 'Local commercial activity nearby', 'Convenient access to key city nodes', 'Commuter friendly'],
-    btnLabel: 'Request Details'
-  },
-  {
-    id: 'harbour-crest',
-    name: 'Harbour Crest',
-    location: 'South Bhubaneswar',
-    type: 'Premium Residences',
-    config: '2 BHK / 3 BHK / 4 BHK',
-    price: 'Premium range',
-    status: 'Ready to Move',
-    category: 'ready-to-move',
-    image: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1200&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80'
-    ],
-    description: 'A refined residential project for buyers who value elevated space planning, community living and a strong urban address.',
-    overview: 'Harbour Crest reflects a premium residential outlook while staying rooted in the practical needs of urban families and professionals in Bhubaneswar.',
-    specifications: ['Spacious apartment layouts', 'Elevated urban appeal', 'Comfort-first planning', 'Modern family spaces'],
-    amenities: ['Clubhouse access', 'Landscaped deck', 'Security systems', 'Power support', 'Dedicated parking', 'Leisure zones'],
-    locationAdvantages: ['Strong city connectivity', 'Near key amenities', 'Strategic residential address', 'Convenient family lifestyle'],
-    connectivity: ['Well-connected within Bhubaneswar', 'Near public transport routes', 'Access to nearby services', 'Suitable for daily commuting'],
-    btnLabel: 'Schedule a Visit'
-  }
-];
-
-const renderFeaturedProjects = () => {
-  const container = document.getElementById('featured-projects');
-  if (!container) return;
-
-  const featured = projects.slice(0, 3);
-  container.innerHTML = featured
-    .map(
-      (project) => `
-        <article class="project-card">
-          <img src="${project.image}" alt="Illustrative placeholder image for ${project.name}" />
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="tag">${project.status}</span>
-              <span>${project.location}</span>
-            </div>
-            <h3>${project.name}</h3>
-            <p>${project.description}</p>
-            <div class="card-footer">
-              <strong>${project.config}</strong>
-              <a href="project-details.html?project=${project.id}" class="btn btn-secondary">View Details</a>
-            </div>
-          </div>
-        </article>
-      `
-    )
-    .join('');
+const project = {
+  name: 'Nayan Arcade',
+  location: 'Barabari, Khandagiri, Bhubaneswar, Odisha',
+  type: 'Residential complex',
+  blocks: 'Block A and Block B',
+  floors: 'Stilt + 4 floors (as shown in brochure)',
+  configurations: [
+    { block: 'Block A', type: '3 BHK', detail: 'The brochure shows a typical Stilt + 4 floor plan.' },
+    { block: 'Block B', type: '3 BHK', detail: 'The brochure shows a typical Stilt + 4 floor plan.' },
+    { block: 'Block B', type: '2 BHK', detail: 'The brochure identifies plans for the first through fourth floors, with a separate stilt-floor plan.' }
+  ],
+  amenities: [
+    '24-hour water supply',
+    'DG connection for power supply',
+    'CCTV surveillance in the building',
+    'Two lifts for both blocks',
+    'Sewage treatment facility',
+    'Earthing arrester',
+    'Transformer for both blocks',
+    'Designed boundary wall',
+    'Rooftop parapet wall'
+  ],
+  specifications: [
+    { title: 'Structure & walls', detail: 'RCC framed structure; brochure states a 10-inch finished external wall. Internal Birla White putty or equivalent; external tile and weather-coat acrylic paint combination.' },
+    { title: 'Flooring', detail: 'Premium vitrified tiles in living, dining and bedrooms; optional premium laminated wooden flooring in the master bedroom; granite or step tiles at staircase; heavy-duty driveway tiles.' },
+    { title: 'Kitchen', detail: 'Anti-skid floor tiles, ceramic wall tiles up to 2 feet above the working platform, granite counter and stainless-steel sink.' },
+    { title: 'Toilets', detail: 'Premium ceramic wall tiles stated up to 7 feet, anti-skid floor tiles, and Jaquar, Hindware or equivalent fixtures/fittings.' },
+    { title: 'Balcony, windows & doors', detail: 'Balcony floor tiles and safety steel railing; uPVC glass windows; sal wood frame with flush doors. Brochure states teak wood main door.' }
+  ],
+  landmarks: [
+    ['Khandagiri', '500 m'], ['Baramunda Bus Stand', '1 km'], ['St. Xavier School', '1 km'],
+    ['SOA ITR', '1 km'], ['Biju Patnaik Airport', '2 km'], ['Capital Hospital', '2 km'],
+    ['Sum Hospital', '2.5 km'], ['DAV School', '3 km'], ['Central School', '3 km'],
+    ['Kalinga Studio', '3 km'], ['AIIMS Hospital', '4 km'], ['Kalinga Stadium', '4 km'],
+    ['Railway Station', '5 km']
+  ]
 };
 
-const renderProjectList = () => {
-  const container = document.getElementById('project-list');
-  if (!container) return;
-
-  container.innerHTML = projects
-    .map(
-      (project) => `
-        <article class="project-card" data-category="${project.category}">
-          <img src="${project.image}" alt="Illustrative placeholder image for ${project.name}" />
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="tag">${project.status}</span>
-              <span>${project.type}</span>
-            </div>
-            <h3>${project.name}</h3>
-            <p>${project.description}</p>
-            <div class="card-footer">
-              <strong>${project.price}</strong>
-              <a href="project-details.html?project=${project.id}" class="btn btn-secondary">View Details</a>
-            </div>
-          </div>
-        </article>
-      `
-    )
-    .join('');
-
-  bindProjectFilters();
-};
-
-const bindProjectFilters = () => {
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('#project-list .project-card');
-
-  if (!buttons.length) return;
-
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const filter = button.dataset.filter;
-      buttons.forEach((btn) => btn.classList.toggle('active', btn === button));
-
-      cards.forEach((card) => {
-        const shouldShow = filter === 'all' || card.dataset.category === filter;
-        card.classList.toggle('hidden', !shouldShow);
-      });
-    });
-  });
-};
-
-const getProjectFromQuery = () => {
-  const params = new URLSearchParams(window.location.search);
-  const projectId = params.get('project');
-  return projects.find((project) => project.id === projectId) || projects[0];
-};
+const listItems = (items) => items.map((item) => `<li>${item}</li>`).join('');
 
 const renderProjectDetails = () => {
-  const container = document.getElementById('project-details-content');
-  if (!container) return;
+  const root = document.getElementById('project-details-content');
+  if (!root) return;
 
-  const project = getProjectFromQuery();
-
-  const html = `
-    <section class="page-hero">
-      <div class="container narrow">
-        <span class="eyebrow">Project details</span>
-        <h1>${project.name}</h1>
-      </div>
-    </section>
-
-    <section class="section project-showcase">
-      <div class="container">
-        <div class="project-main-image">
-          <img src="${project.image}" alt="Illustrative placeholder image for ${project.name}" />
-        </div>
-
-        <div class="gallery-grid">
-          ${project.gallery
-            .map(
-              (image) => `<img src="${image}" alt="Illustrative placeholder image for ${project.name}" />`
-            )
-            .join('')}
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt-bg">
-      <div class="container detail-layout">
-        <div>
-          <span class="eyebrow">Overview</span>
-          <h2>${project.name}</h2>
-          <p>${project.overview}</p>
-
-          <div class="project-meta">
-            <div class="summary-row"><span>Location</span><strong>${project.location}</strong></div>
-            <div class="summary-row"><span>Property Type</span><strong>${project.type}</strong></div>
-            <div class="summary-row"><span>Configuration</span><strong>${project.config}</strong></div>
-            <div class="summary-row"><span>Price Range</span><strong>${project.price}</strong></div>
-            <div class="summary-row"><span>Status</span><strong>${project.status}</strong></div>
-          </div>
-
-          <div class="cta-row">
-            <a href="projects.html" class="btn btn-secondary">Back to Projects</a>
-            <a href="contact.html" class="btn btn-primary">Schedule a Site Visit</a>
-          </div>
-        </div>
-
-        <aside class="property-summary">
-          <span class="eyebrow">Quick details</span>
-          <h3>Property highlights</h3>
-          <ul class="spec-list">
-            ${project.specifications.map((item) => `<li>${item}</li>`).join('')}
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split-layout">
-        <div>
-          <span class="eyebrow">Amenities</span>
-          <h2>Comfort and lifestyle features</h2>
-          <ul class="amenity-list">
-            ${project.amenities.map((item) => `<li>${item}</li>`).join('')}
-          </ul>
-        </div>
-        <div>
-          <span class="eyebrow">Location advantages</span>
-          <h2>Why this location works</h2>
-          <ul class="amenity-list">
-            ${project.locationAdvantages.map((item) => `<li>${item}</li>`).join('')}
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt-bg">
-      <div class="container split-layout">
-        <div>
-          <span class="eyebrow">Connectivity</span>
-          <h2>Easy access to the city</h2>
-          <ul class="amenity-list">
-            ${project.connectivity.map((item) => `<li>${item}</li>`).join('')}
-          </ul>
-        </div>
-        <div>
-          <span class="eyebrow">Request a callback</span>
-          <form class="enquiry-form" data-form="lead-form" novalidate>
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your full name" required />
-            </label>
-            <label>
-              Phone
-              <input type="tel" name="phone" placeholder="Your phone number" required />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" placeholder="Optional" />
-            </label>
-            <label>
-              Preferred configuration
-              <input type="text" name="configuration" value="${project.config}" />
-            </label>
-            <button type="submit" class="btn btn-primary">${project.btnLabel}</button>
-            <p class="form-note" aria-live="polite">This demo form validates input and is ready to be connected to a preferred backend or form service.</p>
-          </form>
-        </div>
-      </div>
-    </section>
+  root.innerHTML = `
+    <section class="page-hero"><div class="container narrow"><p class="eyebrow">Project details</p><h1>Nayan Arcade</h1><p class="page-lede">A residential complex at Barabari, Khandagiri, Bhubaneswar.</p></div></section>
+    <section class="section"><div class="container detail-intro"><div><p class="eyebrow">At a glance</p><h2>Designed around<br><em>everyday living.</em></h2><p>Project information below is based on the supplied brochure. Its specifications are tentative and should be confirmed with the developer.</p></div><div class="glance-grid"><div><span>Location</span><strong>${project.location}</strong></div><div><span>Project type</span><strong>${project.type}</strong></div><div><span>Blocks</span><strong>${project.blocks}</strong></div><div><span>Building form</span><strong>${project.floors}</strong></div></div></div></section>
+    <section class="section alt-bg" id="configurations"><div class="container"><div class="section-heading"><div><p class="eyebrow">Apartment plans</p><h2>Find your fit.</h2></div><p class="section-copy">The brochure shows plans for 2 BHK and 3 BHK apartments. Refer to approved drawings for dimensions, layout and orientation.</p></div><div class="config-detail-grid">${project.configurations.map((item, index) => `<article class="config-detail-card"><span class="card-number">0${index + 1} / ${item.block.toUpperCase()}</span><h3>${item.type}</h3><p>${item.detail}</p><a href="contact.html#enquiry">Ask about this plan <span>↗</span></a></article>`).join('')}</div></div></section>
+    <section class="section"><div class="container detail-split"><div><p class="eyebrow">Building facilities</p><h2>Details for<br><em>everyday comfort.</em></h2><p class="section-copy">Facilities listed here are stated in the brochure; confirm their current availability, operation and scope.</p></div><ul class="detail-list">${listItems(project.amenities)}</ul></div></section>
+    <section class="section alt-bg"><div class="container"><div class="section-heading"><div><p class="eyebrow">Specifications</p><h2>Materials &amp; finishes.</h2></div><p class="section-copy">A concise guide to finish details described in the brochure. Brands are noted as stated, or equivalent where specified.</p></div><div class="spec-grid">${project.specifications.map((item) => `<article><span class="spec-rule"></span><h3>${item.title}</h3><p>${item.detail}</p></article>`).join('')}</div></div></section>
+    <section class="section" id="location"><div class="container"><div class="section-heading"><div><p class="eyebrow">Around the neighbourhood</p><h2>Khandagiri, connected.</h2></div><p class="section-copy">Distances shown are reproduced from the brochure, are approximate and have not been independently verified. The brochure location map is not to scale.</p></div><div class="landmark-grid">${project.landmarks.map(([name, distance]) => `<div><span>${name}</span><strong>${distance}</strong></div>`).join('')}</div></div></section>
+    <section class="section alt-bg"><div class="container notice-panel"><span class="notice-symbol">i</span><div><h2>Important project information</h2><p>The brochure is promotional, not a legal document. Specifications and details are tentative, may change without notice, and are subject to confirmation by the developer. Apartment areas, prices, availability, project status and RERA information are not published here because verified details were not supplied.</p></div></div></section>
+    <section class="section"><div class="container cta-banner"><div><p class="eyebrow">Want to know more?</p><h2>Let’s talk about<br><em>Nayan Arcade.</em></h2></div><a class="btn btn-primary" href="contact.html#enquiry">Make an enquiry <span>→</span></a></div></section>
   `;
-
-  container.innerHTML = html;
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderFeaturedProjects();
-  renderProjectList();
-  renderProjectDetails();
-});
+document.addEventListener('DOMContentLoaded', renderProjectDetails);
