@@ -14,8 +14,8 @@ const projects = [
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80'
     ],
-    description: 'A contemporary residential address crafted for families seeking modern, balanced city living with practical comforts and neighborhood convenience.',
-    overview: 'Sunrise Vista is designed for homebuyers looking for an elegant, family-oriented lifestyle in Bhubaneswar. The project emphasizes efficient planning, natural light and an easy connection to daily essentials.',
+    description: 'A contemporary residential address crafted for families seeking modern city living, practical comfort and neighborhood convenience.',
+    overview: 'Sunrise Vista is designed for homebuyers looking for an elegant, family-oriented lifestyle in Bhubaneswar. The project emphasizes thoughtful planning, natural light, and a strong connection to daily essentials.',
     specifications: ['Modern apartment planning', 'Well-designed living spaces', 'Secure access and common areas', 'Natural light and ventilation'],
     amenities: ['Landscaped community spaces', 'Children play area', '24/7 security', 'Power backup', 'Visitor seating', 'Car parking'],
     locationAdvantages: ['Close to schools and daily essentials', 'Accessible by major city roads', 'Suitable for family living', 'Balanced urban convenience'],
@@ -37,9 +37,9 @@ const projects = [
       'https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80'
     ],
-    description: 'A thoughtfully laid-out residential community ideal for growing families and professionals seeking a practical home investment in Bhubaneswar.',
-    overview: 'Meadow Heights showcases streamlined apartment planning and livable spaces that begin with practical family needs and end with a comfortable urban lifestyle.',
-    specifications: ['Smart interior planning', 'Flexible apartment sizes', 'Premium yet comfortable finishes', 'Efficient circulation planning'],
+    description: 'A thoughtfully laid-out residential community ideal for growing families and professionals seeking practical home value in Bhubaneswar.',
+    overview: 'Meadow Heights combines streamlined apartment planning and livable spaces that prioritize family needs and comfortable urban lifestyles.',
+    specifications: ['Smart interior planning', 'Flexible apartment sizes', 'Comfortable finishes', 'Efficient circulation planning'],
     amenities: ['Green open areas', 'Community seating zones', 'Security monitoring', 'Elevators', 'Water management', 'Open parking'],
     locationAdvantages: ['Near daily conveniences', 'Family-oriented neighborhood', 'Good access to transportation', 'Well-connected residential zone'],
     connectivity: ['Close to main roads', 'Local commercial activity nearby', 'Convenient access to key city nodes', 'Commuter friendly'],
@@ -60,7 +60,7 @@ const projects = [
       'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80',
       'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80'
     ],
-    description: 'A refined residential project for buyers who value elevated space planning, community living and a strong address in the city.',
+    description: 'A refined residential project for buyers who value elevated space planning, community living and a strong urban address.',
     overview: 'Harbour Crest reflects a premium residential outlook while staying rooted in the practical needs of urban families and professionals in Bhubaneswar.',
     specifications: ['Spacious apartment layouts', 'Elevated urban appeal', 'Comfort-first planning', 'Modern family spaces'],
     amenities: ['Clubhouse access', 'Landscaped deck', 'Security systems', 'Power support', 'Dedicated parking', 'Leisure zones'],
@@ -130,6 +130,8 @@ const renderProjectList = () => {
 const bindProjectFilters = () => {
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('#project-list .project-card');
+
+  if (!buttons.length) return;
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -269,66 +271,8 @@ const renderProjectDetails = () => {
   container.innerHTML = html;
 };
 
-const initForms = () => {
-  document.querySelectorAll('[data-form="lead-form"]').forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const requiredFields = form.querySelectorAll('[required]');
-      let valid = true;
-
-      requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          valid = false;
-          field.setAttribute('aria-invalid', 'true');
-          field.style.borderColor = '#d44848';
-        } else {
-          field.setAttribute('aria-invalid', 'false');
-          field.style.borderColor = 'rgba(23, 61, 89, 0.15)';
-        }
-      });
-
-      if (!valid) {
-        const note = form.querySelector('.form-note');
-        if (note) {
-          note.textContent = 'Please complete the required fields before submitting this enquiry form.';
-          note.style.color = '#9d2b2b';
-        }
-        return;
-      }
-
-      const note = form.querySelector('.form-note');
-      if (note) {
-        note.textContent = 'Form validation passed. Connect this form to your preferred backend or form service to receive enquiries.';
-        note.style.color = '#173D59';
-      }
-
-      form.reset();
-    });
-  });
-};
-
-const initNavigation = () => {
-  const navToggle = document.querySelector('.nav-toggle');
-  const siteNav = document.querySelector('.site-nav');
-
-  if (!navToggle || !siteNav) return;
-
-  navToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-};
-
-const initFooterYear = () => {
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-};
-
-renderFeaturedProjects();
-renderProjectList();
-renderProjectDetails();
-initForms();
-initNavigation();
-initFooterYear();
+document.addEventListener('DOMContentLoaded', () => {
+  renderFeaturedProjects();
+  renderProjectList();
+  renderProjectDetails();
+});

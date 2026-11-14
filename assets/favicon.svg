@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Nayan Arcade logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#173D59"/>
+      <stop offset="100%" stop-color="#3F8190"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#F2F0E9"/>
+  <rect x="14" y="14" width="100" height="100" rx="24" fill="url(#g1)"/>
+  <path d="M39 90V38h11.5l18 23.5V38H81v52H69.5L51.2 66.2V90H39Zm44.5-52h8.5v52h-8.5z" fill="#FFFFFF"/>
+</svg>
